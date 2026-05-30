@@ -12,6 +12,10 @@ app.get("/", (req, res) => {
   res.send("Backend is running!");
 });
 
+app.get("/test", (req, res) => {
+  res.json({ message: "Test route working" });
+});
+
 app.get("/lessons", (req, res) => {
   db.query("SELECT * FROM lessons", (err, results) => {
     if (err) {
