@@ -1,0 +1,9 @@
+.active-word {
+  background-color: #ffe066;
+  color: #1f2937 !important;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.35);
+  transition: all 0.2s ease;
+}
