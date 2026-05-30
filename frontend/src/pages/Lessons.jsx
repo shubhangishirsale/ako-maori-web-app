@@ -15,7 +15,7 @@ function Lessons() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
-    fetch("http://localhost:5000/lessons")
+   fetch(`${import.meta.env.VITE_API_URL}/lessons`)
       .then((response) => response.json())
       .then((data) => {
         const filteredLessons = data.filter(
@@ -27,7 +27,7 @@ function Lessons() {
       })
       .catch((error) => console.error("Error fetching lessons:", error));
 
-    fetch("http://localhost:5000/words")
+    fetch(`${import.meta.env.VITE_API_URL}/words`)
       .then((response) => response.json())
       .then((data) => setWords(data))
       .catch((error) => console.error("Error fetching words:", error));

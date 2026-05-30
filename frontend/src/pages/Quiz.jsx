@@ -9,7 +9,7 @@ function Quiz() {
   const [saveMessage, setSaveMessage] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/quizzes")
+    fetch(`${import.meta.env.VITE_API_URL}/quizzes`)
       .then((response) => response.json())
       .then((data) => setQuizzes(data))
       .catch((error) => console.error("Error fetching quizzes:", error));
@@ -88,7 +88,7 @@ function Quiz() {
 
   const saveScore = async () => {
     try {
-      const response = await fetch("http://localhost:5000/progress", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/progress`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

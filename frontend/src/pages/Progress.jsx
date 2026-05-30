@@ -4,7 +4,7 @@ function Progress() {
   const [progressData, setProgressData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/progress")
+    fetch(`${import.meta.env.VITE_API_URL}/progress`)
       .then((response) => response.json())
       .then((data) => setProgressData(data))
       .catch((error) => console.error("Error fetching progress:", error));
